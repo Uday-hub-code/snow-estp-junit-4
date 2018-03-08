@@ -7,7 +7,6 @@ import static com.disney.cast.platform.vacationplanner.test.api.ApiAuthLevel.LEA
 import static com.disney.cast.platform.vacationplanner.test.api.ApiAuthLevel.PLANNER;
 import static com.disney.cast.platform.vacationplanner.test.api.ApiAuthLevel.SNOWADMIN;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import java.net.MalformedURLException;
@@ -16,6 +15,7 @@ import java.util.stream.Collectors;
 
 import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runners.Parameterized.Parameters;
 
 import com.disney.automation.servicetesting.core.ApiTestResponse;
 import com.disney.cast.platform.common.api.model.Result;
@@ -65,6 +65,7 @@ public class GetAlertTest extends AbstractVacationPlannerRewardsApiTest {
 
     }
 
+    @Parameters(name = "/alert GET")
     @Description("This is a happy path")
     @Epic("Regression Tests")
     @Issue("https://jira.disney.com/browse/PPE-10717")
@@ -81,18 +82,13 @@ public class GetAlertTest extends AbstractVacationPlannerRewardsApiTest {
                 })
                 .getResult();
 
-        List<AlertTableRecord> inactiveAlertsRecordsFromTableApi = alertTableApi
-                .get(clients().get(SNOWADMIN.toString()),
-                        "?sysparm_query=u_active%3Dfalse")
-                .getBodyObject(new TypeReference<Result<List<AlertTableRecord>>>() {
-                })
-                .getResult();
-
         ApiTestResponse getAlertResponse = getAlert(clients().get(PLANNER.toString()));
         List<Alert> returnedAlerts = getAlertResponse
                 .getBodyObject(new TypeReference<Result<List<Alert>>>() {
                 })
                 .getResult();
+
+        validateStatusCode(getAlertResponse);
 
         assertEquals(
                 String.format(
@@ -105,12 +101,6 @@ public class GetAlertTest extends AbstractVacationPlannerRewardsApiTest {
                 .map(alert -> new AlertVO(alert.getUType(), alert.getUBody()))
                 .collect(Collectors.toList());
 
-        List<AlertVO> apiTableInactiveAlerts = inactiveAlertsRecordsFromTableApi
-                .stream()
-                .map(alert -> new AlertVO(alert == null ? "" : alert.getUType(),
-                        alert == null ? "" : alert.getUBody()))
-                .collect(Collectors.toList());
-
         List<AlertVO> apiAlerts = returnedAlerts
                 .stream()
                 .map(alert -> new AlertVO(alert.getType(), alert.getBody()))
@@ -118,11 +108,6 @@ public class GetAlertTest extends AbstractVacationPlannerRewardsApiTest {
 
         assertTrue(String.format("The Alerts don't match. \nExpected: %s\nActual: %s", apiTableAlerts, apiAlerts),
                 apiTableAlerts.containsAll(apiAlerts) && apiAlerts.containsAll(apiTableAlerts));
-
-        assertFalse(String.format(
-                "The Alerts from api should not match with alerts from table api. \nExpected: %s\nActual: %s",
-                apiTableInactiveAlerts, apiAlerts),
-                apiTableInactiveAlerts.containsAll(apiAlerts) && apiAlerts.containsAll(apiTableInactiveAlerts));
     }
 
     public static class AlertVO {
