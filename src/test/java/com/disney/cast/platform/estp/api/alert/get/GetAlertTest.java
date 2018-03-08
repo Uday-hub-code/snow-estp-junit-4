@@ -14,6 +14,7 @@ import java.net.MalformedURLException;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import com.disney.automation.servicetesting.core.ApiTestResponse;
@@ -29,8 +30,12 @@ import com.fasterxml.jackson.core.type.TypeReference;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
 import io.qameta.allure.Issue;
-import io.qameta.allure.Link;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.Step;
 
 public class GetAlertTest extends AbstractVacationPlannerRewardsApiTest {
 
@@ -54,10 +59,18 @@ public class GetAlertTest extends AbstractVacationPlannerRewardsApiTest {
                         payroll);
     }
 
+    @Step
+    private void validateStatusCode(ApiTestResponse response) {
+        Assert.assertEquals(response.getStatus(), 200);
+
+    }
+
     @Description("This is a happy path")
     @Epic("Regression Tests")
-    @Issue("PPE-1234")
-    @Link()
+    @Issue("https://jira.disney.com/browse/PPE-10717")
+    @Owner("Roberto")
+    @Feature("Login feature")
+    @Severity(SeverityLevel.CRITICAL)
     @Test
     public void getAlertTest() throws Exception {
         AlertTableApi alertTableApi = new AlertTableApi();
@@ -76,16 +89,10 @@ public class GetAlertTest extends AbstractVacationPlannerRewardsApiTest {
                 .getResult();
 
         ApiTestResponse getAlertResponse = getAlert(clients().get(PLANNER.toString()));
-        int getAlertResponseStatusCode = getAlertResponse.getStatus();
         List<Alert> returnedAlerts = getAlertResponse
                 .getBodyObject(new TypeReference<Result<List<Alert>>>() {
                 })
                 .getResult();
-        assertEquals(
-                String.format(
-                        "When making a GET request to /alert, the HTTP status code of the response should be 200 instead of %s",
-                        getAlertResponse.getStatus()),
-                200, getAlertResponseStatusCode);
 
         assertEquals(
                 String.format(
