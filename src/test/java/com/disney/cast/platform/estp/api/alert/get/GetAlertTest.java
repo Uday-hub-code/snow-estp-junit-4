@@ -6,7 +6,6 @@ import static com.disney.cast.platform.vacationplanner.data.DataManager.ALERT_DA
 import static com.disney.cast.platform.vacationplanner.test.api.ApiAuthLevel.LEADER;
 import static com.disney.cast.platform.vacationplanner.test.api.ApiAuthLevel.PLANNER;
 import static com.disney.cast.platform.vacationplanner.test.api.ApiAuthLevel.SNOWADMIN;
-import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import java.net.MalformedURLException;
@@ -15,7 +14,6 @@ import java.util.stream.Collectors;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runners.Parameterized.Parameters;
 
 import com.disney.automation.servicetesting.core.ApiTestResponse;
 import com.disney.cast.platform.common.api.model.Result;
@@ -36,6 +34,7 @@ import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
+import io.qameta.allure.junit4.Tag;
 
 public class GetAlertTest extends AbstractVacationPlannerRewardsApiTest {
 
@@ -60,17 +59,21 @@ public class GetAlertTest extends AbstractVacationPlannerRewardsApiTest {
     }
 
     @Step
-    private void validateStatusCode(ApiTestResponse response) {
-        Assert.assertEquals(response.getStatus(), 200);
-
+    private void validateStatusCode(int statusCode) {
+        Assert.assertEquals(statusCode, 200);
     }
 
-    @Parameters(name = "/alert GET")
+    @Step
+    private void validateSizeOfAlerts(int alertsFromTableApi, int alertsFromEndpoint) {
+        Assert.assertEquals(alertsFromTableApi, alertsFromEndpoint);
+    }
+
     @Description("This is a happy path")
     @Epic("Regression Tests")
     @Issue("PPE-10717")
     @Owner("Roberto")
-    @Feature("Login feature")
+    @Feature("Login")
+    @Tag("API")
     @Severity(SeverityLevel.CRITICAL)
     @Test
     public void getAlertTest() throws Exception {
@@ -88,14 +91,8 @@ public class GetAlertTest extends AbstractVacationPlannerRewardsApiTest {
                 })
                 .getResult();
 
-        validateStatusCode(getAlertResponse);
-
-        assertEquals(
-                String.format(
-                        "The amount of returned Alerts expected is %s when the actual amount of active alerts is %s",
-                        returnedAlerts.size(), activeAlertsRecordsFromTableApi.size()),
-                activeAlertsRecordsFromTableApi.size(), returnedAlerts.size());
-
+        validateStatusCode(getAlertResponse.getStatus());
+        validateSizeOfAlerts(activeAlertsRecordsFromTableApi.size(), returnedAlerts.size());
         List<AlertVO> apiTableAlerts = activeAlertsRecordsFromTableApi
                 .stream()
                 .map(alert -> new AlertVO(alert.getUType(), alert.getUBody()))
