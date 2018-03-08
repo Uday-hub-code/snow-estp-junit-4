@@ -53,7 +53,6 @@ public class LoginSuccessfulTest extends AbstractVacationPlannerRewardsUiTest {
         HomePage homePage = loginPage.logIn(planner.getUserName(), planner.getPass(), HomePage.class);
 
         assertTrue("Planner should have been able to log in. Home page is not displayed", homePage.isVisible());
-        assertEquals("Welcome, wdpr-cp-svc-ci-automation First Name", homePage.getCenterText());
         assertEquals("This Month's Performance", homePage.getThisMonthsPerformance());
         assertEquals("View Full Performance Summary", homePage.getViewFullPerformance());
         assertEquals("View Reward History", homePage.getRewardHistory());
