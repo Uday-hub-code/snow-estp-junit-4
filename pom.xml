@@ -38,7 +38,7 @@
 						<include>com.disney.cast.platform.estp.**.*Test.java</include>
 					</includes>
 					<parallel>classes</parallel>
-					<threadCount>2</threadCount>
+					<threadCount>1</threadCount>
 				</configuration>
 				<dependencies>
 					<dependency>
