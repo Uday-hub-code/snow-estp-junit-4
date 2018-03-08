@@ -14,6 +14,18 @@ import com.disney.cast.platform.common.api.model.Result;
 import com.disney.cast.platform.vacationplanner.test.api.AbstractVacationPlannerRewardsApiTest;
 import com.fasterxml.jackson.core.type.TypeReference;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Issue;
+import io.qameta.allure.Link;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.TmsLink;
+import io.qameta.allure.junit4.DisplayName;
+import io.qameta.allure.junit4.Tag;
+
 /**
  * https://jira.disney.com/browse/PPE-2340
  *
@@ -29,6 +41,17 @@ public class GetAlertWithoutAuthorizationTest extends AbstractVacationPlannerRew
     public void specificSetUp() throws Exception {
     }
 
+    @Description("No authorization test for /alert endpoint.")
+    @Epic("Regression Tests")
+    @Issue("PPE-10717")
+    @Owner("Jose")
+    @Feature("Alert")
+    @DisplayName("Access to /alert endpoint without authorization")
+    @Tag("API")
+    @Tag("GET")
+    @Link(name = "allure", type = "mylink", url = "https://example.org")
+    @TmsLink("https://hpalm.com")
+    @Severity(SeverityLevel.MINOR)
     @Test
     public void getAlertWithoutAuthorizationTest() throws Exception {
         ApiTestResponse alertResponse = getAlert(clients().get(NO_AUTH.toString()));

@@ -13,6 +13,18 @@ import com.disney.cast.platform.common.ui.pages.ApplicationsLoginPage;
 import com.disney.cast.platform.vacationplanner.test.ui.AbstractVacationPlannerRewardsUiTest;
 import com.disney.cast.platform.vacationplanner.ui.app.pages.home.HomePage;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Issue;
+import io.qameta.allure.Link;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.TmsLink;
+import io.qameta.allure.junit4.DisplayName;
+import io.qameta.allure.junit4.Tag;
+
 public class LoginSuccessfulTest extends AbstractVacationPlannerRewardsUiTest {
 
     private final User planner = users().get(SNOWADMIN.toString());
@@ -24,6 +36,17 @@ public class LoginSuccessfulTest extends AbstractVacationPlannerRewardsUiTest {
     public void specificSetUp() throws Exception {
     }
 
+    @Description("Login successful to ESTP.")
+    @Epic("Smoke Tests")
+    @Issue("PPE-10717")
+    @Owner("Jose")
+    @Feature("Login")
+    @Tag("API")
+    @DisplayName("Access to the application")
+    @Tag("UI")
+    @Link(name = "allure", type = "mylink", url = "https://example.org")
+    @TmsLink("https://hpalm.com")
+    @Severity(SeverityLevel.BLOCKER)
     @Test
     public void loginSuccessfulTest() throws Exception {
         ApplicationsLoginPage loginPage = new ApplicationsLoginPage();

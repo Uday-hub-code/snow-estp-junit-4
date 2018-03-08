@@ -11,6 +11,18 @@ import org.junit.Test;
 import com.disney.cast.platform.common.ui.snow.pages.recordslist.SnowRecordsListPage;
 import com.disney.cast.platform.vacationplanner.test.ui.AbstractVacationPlannerRewardsUiTest;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Issue;
+import io.qameta.allure.Link;
+import io.qameta.allure.Owner;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.TmsLink;
+import io.qameta.allure.junit4.DisplayName;
+import io.qameta.allure.junit4.Tag;
+
 /**
  * https://jira.disney.com/browse/PPE-2784 Verify Alerts table page labels in SNOW UI
  *
@@ -30,6 +42,17 @@ public class AlertsTableListLabelsTest extends AbstractVacationPlannerRewardsUiT
     public void specificSetUp() throws Exception {
     }
 
+    @Description("Validate labels in Snow.")
+    @Epic("Regression Tests")
+    @Issue("PPE-10717")
+    @Owner("Jose")
+    @Feature("Snow")
+    @Tag("SNOW")
+    @DisplayName("Access to the application")
+    @Tag("UI")
+    @Link(name = "allure", type = "mylink", url = "https://example.org")
+    @TmsLink("https://hpalm.com")
+    @Severity(SeverityLevel.TRIVIAL)
     @Test
     public void entitlementsTableListLabelsTest() throws Exception {
         SnowRecordsListPage entitlementsRecordsListPage = AlertsCommonFlow

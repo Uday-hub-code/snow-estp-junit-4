@@ -71,17 +71,17 @@ public class GetAlertTest extends AbstractVacationPlannerRewardsApiTest {
         Assert.assertEquals(alertsFromTableApi, alertsFromEndpoint);
     }
 
-    @Description("This is a happy path")
-    @Epic("Regression Tests")
+    @Description("Happy path for /alert endpoint.")
+    @Epic("Smoke Tests")
     @Issue("PPE-10717")
-    @Owner("Roberto")
-    @Feature("Login")
+    @Owner("Jose")
+    @Feature("Alert")
     @Tag("API")
     @DisplayName("Alert SUCCESS")
     @Tag("API")
-    @Link("https://example.org")
-    @Link(name = "allure", type = "mylink")
-    @TmsLink("WDPR Electronic Sales Tool Platform_ESTP-26_API_TC 001")
+    @Tag("GET")
+    @Link(name = "allure", type = "mylink", url = "https://example.org")
+    @TmsLink("https://hpalm.com")
     @Severity(SeverityLevel.CRITICAL)
     @Test
     public void getAlertTest() throws Exception {
