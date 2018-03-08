@@ -27,6 +27,11 @@ import com.disney.cast.platform.vacationplanner.data.DataManager;
 import com.disney.cast.platform.vacationplanner.test.api.AbstractVacationPlannerRewardsApiTest;
 import com.fasterxml.jackson.core.type.TypeReference;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Issue;
+import io.qameta.allure.Link;
+
 public class GetAlertTest extends AbstractVacationPlannerRewardsApiTest {
 
     private static final int ACTIVE_ALERT_TO_ADD = 1;
@@ -49,6 +54,10 @@ public class GetAlertTest extends AbstractVacationPlannerRewardsApiTest {
                         payroll);
     }
 
+    @Description("This is a happy path")
+    @Epic("Regression Tests")
+    @Issue("PPE-1234")
+    @Link()
     @Test
     public void getAlertTest() throws Exception {
         AlertTableApi alertTableApi = new AlertTableApi();
