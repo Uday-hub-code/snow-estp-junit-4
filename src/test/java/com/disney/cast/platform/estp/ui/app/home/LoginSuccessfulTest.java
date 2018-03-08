@@ -10,7 +10,7 @@ import org.junit.Test;
 
 import com.disney.automation.webframework.config.User;
 import com.disney.cast.platform.common.ui.pages.ApplicationsLoginPage;
-import com.disney.cast.platform.vacationplanner.test.ui.AbstractVacationPlannerRewardsUiTest;
+import com.disney.cast.platform.vacationplanner.test.ui.AbstractEstpUiTest;
 import com.disney.cast.platform.vacationplanner.ui.app.pages.home.HomePage;
 
 import io.qameta.allure.Description;
@@ -25,7 +25,7 @@ import io.qameta.allure.TmsLink;
 import io.qameta.allure.junit4.DisplayName;
 import io.qameta.allure.junit4.Tag;
 
-public class LoginSuccessfulTest extends AbstractVacationPlannerRewardsUiTest {
+public class LoginSuccessfulTest extends AbstractEstpUiTest {
 
     private final User planner = users().get(SNOWADMIN.toString());
 

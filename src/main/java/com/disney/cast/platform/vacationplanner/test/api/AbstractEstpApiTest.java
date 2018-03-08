@@ -13,9 +13,9 @@ import com.disney.cast.platform.vacationplanner.data.DataManager;
 /**
  * @author walter.finkbeiner
  */
-public abstract class AbstractVacationPlannerRewardsApiTest extends AbstractApiTest {
+public abstract class AbstractEstpApiTest extends AbstractApiTest {
 
-    public AbstractVacationPlannerRewardsApiTest() throws MalformedURLException {
+    public AbstractEstpApiTest() throws MalformedURLException {
         super();
     }
 

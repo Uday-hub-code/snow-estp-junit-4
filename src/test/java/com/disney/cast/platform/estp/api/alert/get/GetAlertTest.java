@@ -23,7 +23,7 @@ import com.disney.cast.platform.vacationplanner.api.snow.tables.AlertTableApi;
 import com.disney.cast.platform.vacationplanner.api.snow.tables.model.AlertTableRecord;
 import com.disney.cast.platform.vacationplanner.api.snow.tables.model.PayrollTableRecord;
 import com.disney.cast.platform.vacationplanner.data.DataManager;
-import com.disney.cast.platform.vacationplanner.test.api.AbstractVacationPlannerRewardsApiTest;
+import com.disney.cast.platform.vacationplanner.test.api.AbstractEstpApiTest;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import io.qameta.allure.Description;
@@ -39,7 +39,7 @@ import io.qameta.allure.TmsLink;
 import io.qameta.allure.junit4.DisplayName;
 import io.qameta.allure.junit4.Tag;
 
-public class GetAlertTest extends AbstractVacationPlannerRewardsApiTest {
+public class GetAlertTest extends AbstractEstpApiTest {
 
     private static final int ACTIVE_ALERT_TO_ADD = 1;
     private static final int INACTIVE_ALERT_TO_ADD = 1;

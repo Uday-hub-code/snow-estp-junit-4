@@ -9,7 +9,7 @@ import java.util.Set;
 import org.junit.Test;
 
 import com.disney.cast.platform.common.ui.snow.pages.recordslist.SnowRecordsListPage;
-import com.disney.cast.platform.vacationplanner.test.ui.AbstractVacationPlannerRewardsUiTest;
+import com.disney.cast.platform.vacationplanner.test.ui.AbstractEstpUiTest;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
@@ -28,7 +28,7 @@ import io.qameta.allure.junit4.Tag;
  *
  * @author erick.ricardez
  */
-public class AlertsTableListLabelsTest extends AbstractVacationPlannerRewardsUiTest {
+public class AlertsTableListLabelsTest extends AbstractEstpUiTest {
 
     private static final String[] expectedTableLabels = {
             "active",

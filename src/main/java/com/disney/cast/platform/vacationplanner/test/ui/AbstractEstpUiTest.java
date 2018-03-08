@@ -11,9 +11,9 @@ import com.disney.automation.webframework.logging.CustomTestWatcher;
 import com.disney.automation.webframework.tests.JUnit4WebDriverTest;
 import com.disney.cast.platform.vacationplanner.data.DataManager;
 
-public abstract class AbstractVacationPlannerRewardsUiTest extends JUnit4WebDriverTest {
+public abstract class AbstractEstpUiTest extends JUnit4WebDriverTest {
 
-    public AbstractVacationPlannerRewardsUiTest() throws MalformedURLException {
+    public AbstractEstpUiTest() throws MalformedURLException {
         super();
     }
 

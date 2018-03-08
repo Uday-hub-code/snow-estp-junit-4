@@ -11,7 +11,7 @@ import org.junit.Test;
 import com.disney.automation.servicetesting.core.ApiTestResponse;
 import com.disney.cast.platform.common.api.model.Error;
 import com.disney.cast.platform.common.api.model.Result;
-import com.disney.cast.platform.vacationplanner.test.api.AbstractVacationPlannerRewardsApiTest;
+import com.disney.cast.platform.vacationplanner.test.api.AbstractEstpApiTest;
 import com.fasterxml.jackson.core.type.TypeReference;
 
 import io.qameta.allure.Description;
@@ -31,7 +31,7 @@ import io.qameta.allure.junit4.Tag;
  *
  * @author erick.ricardez
  */
-public class GetAlertWithoutAuthorizationTest extends AbstractVacationPlannerRewardsApiTest {
+public class GetAlertWithoutAuthorizationTest extends AbstractEstpApiTest {
 
     public GetAlertWithoutAuthorizationTest() throws MalformedURLException {
         super();
