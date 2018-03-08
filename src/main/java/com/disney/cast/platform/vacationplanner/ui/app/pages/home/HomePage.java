@@ -16,6 +16,9 @@ import com.disney.cast.platform.vacationplanner.ui.app.pages.components.AlertMes
 import com.disney.cast.platform.vacationplanner.ui.app.pages.components.EntitlementCard;
 import com.disney.cast.platform.vacationplanner.ui.app.pages.components.PerformanceHorizontalChart;
 import com.disney.cast.platform.vacationplanner.ui.app.pages.performance.PerformanceSummaryPage;
+import com.testautomationguru.ocular.Ocular;
+import com.testautomationguru.ocular.comparator.OcularResult;
+import com.testautomationguru.ocular.snapshot.Snap;
 
 /**
  * VACATIUON PLNNER HOME PAGE
@@ -23,6 +26,7 @@ import com.disney.cast.platform.vacationplanner.ui.app.pages.performance.Perform
  * @author erick.ricardez
  */
 
+@Snap("HomePage-#{OPT}.png")
 public class HomePage extends AbstractVacationPlannerPageObject {
 
     private Supplier<WebElement> centerText = () -> waitFor(
@@ -122,5 +126,38 @@ public class HomePage extends AbstractVacationPlannerPageObject {
     private void waitForLoad() {
         waitFor(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".loading-spinner")));
         waitFor(ExpectedConditions.numberOfElementsToBe(By.cssSelector(".ng-animate"), 0));
+    }
+
+    public OcularResult compare() {
+        return Ocular
+                .snapshot()
+                .from(this)
+                .replaceAttribute("OPT", "")
+                .sample()
+                .using(getDriver())
+                .compare();
+    }
+
+    public OcularResult compareSimilar() {
+        return Ocular
+                .snapshot()
+                .from(this)
+                .replaceAttribute("OPT", "similarity")
+                .sample()
+                .using(getDriver())
+                .similarity(85)
+                .compare();
+    }
+
+    public OcularResult compareMenu() {
+        return Ocular
+                .snapshot()
+                .from(this)
+                .replaceAttribute("OPT", "menu")
+                .sample()
+                // .excluding(getSearch())
+                .using(getDriver())
+                // .element(getSearch())
+                .compare();
     }
 }
