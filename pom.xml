@@ -37,6 +37,8 @@
 						<!-- include>com.disney.cast.platform.estp.${test.type}.**.*Test.java</include-->
 						<include>com.disney.cast.platform.estp.**.*Test.java</include>
 					</includes>
+					<parallel>classes</parallel>
+					<threadCount>2</threadCount>
 				</configuration>
 				<dependencies>
 					<dependency>
@@ -108,5 +110,4 @@
 			<version>4.12</version>
 		</dependency>
 	</dependencies>
-
 </project>
