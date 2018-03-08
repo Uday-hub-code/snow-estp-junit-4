@@ -13,8 +13,8 @@
 
 	<properties>
 		<version.apache.poi>3.15</version.apache.poi>
-        <aspectj.version>1.8.9</aspectj.version>
-        <compiler.version>1.7</compiler.version>
+        <aspectj.version>1.8.13</aspectj.version>
+        <compiler.version>1.8</compiler.version>
     </properties>
 	
 	<build>
@@ -67,7 +67,7 @@
                         </property>
                         <property>
                             <name>allure.link.issue.pattern</name>
-                            <value>https://example.org/issue/{}</value>
+                            <value>https://jira.disney.com/browse/{}</value>
                         </property>
                     </systemProperties>
                 </configuration>

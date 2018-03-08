@@ -68,7 +68,7 @@ public class GetAlertTest extends AbstractVacationPlannerRewardsApiTest {
     @Parameters(name = "/alert GET")
     @Description("This is a happy path")
     @Epic("Regression Tests")
-    @Issue("https://jira.disney.com/browse/PPE-10717")
+    @Issue("PPE-10717")
     @Owner("Roberto")
     @Feature("Login feature")
     @Severity(SeverityLevel.CRITICAL)
