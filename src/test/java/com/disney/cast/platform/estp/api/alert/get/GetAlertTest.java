@@ -30,10 +30,13 @@ import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
 import io.qameta.allure.Issue;
+import io.qameta.allure.Link;
 import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Step;
+import io.qameta.allure.TmsLink;
+import io.qameta.allure.junit4.DisplayName;
 import io.qameta.allure.junit4.Tag;
 
 public class GetAlertTest extends AbstractVacationPlannerRewardsApiTest {
@@ -74,6 +77,11 @@ public class GetAlertTest extends AbstractVacationPlannerRewardsApiTest {
     @Owner("Roberto")
     @Feature("Login")
     @Tag("API")
+    @DisplayName("Alert SUCCESS")
+    @Tag("API")
+    @Link("https://example.org")
+    @Link(name = "allure", type = "mylink")
+    @TmsLink("WDPR Electronic Sales Tool Platform_ESTP-26_API_TC 001")
     @Severity(SeverityLevel.CRITICAL)
     @Test
     public void getAlertTest() throws Exception {
