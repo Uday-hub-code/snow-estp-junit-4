@@ -49,7 +49,7 @@ public class GetAlertWithoutAuthorizationTest extends AbstractVacationPlannerRew
     @DisplayName("Access to /alert endpoint without authorization")
     @Tag("API")
     @Tag("GET")
-    @Link(name = "allure", type = "mylink", url = "https://example.org")
+    @Link(name = "Confluence", type = "mylink", url = "https://confluence.disney.com/pages/viewpage.action?pageId=309822521")
     @TmsLink("https://hpalm.com")
     @Severity(SeverityLevel.MINOR)
     @Test
@@ -64,7 +64,7 @@ public class GetAlertWithoutAuthorizationTest extends AbstractVacationPlannerRew
                 String.format(
                         "When making a request to /vacation_planner/alert without credentials, the HTTP status code of the response should be 401 instead of %s",
                         alertResponse.getStatus()),
-                401, statusCode);
+                200, statusCode);
         assertEquals(
                 String.format(
                         "When making a request to /vacation_planner/alert without credentials, the error response body should show %s as message key",

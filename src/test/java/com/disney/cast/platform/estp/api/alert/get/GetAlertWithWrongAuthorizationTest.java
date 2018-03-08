@@ -46,11 +46,10 @@ public class GetAlertWithWrongAuthorizationTest extends AbstractVacationPlannerR
     @Issue("PPE-10717")
     @Owner("Jose")
     @Feature("Alert")
-    @Tag("API")
     @DisplayName("Access to alert endpoint with wrong authorization")
     @Tag("API")
     @Tag("GET")
-    @Link(name = "allure", type = "mylink", url = "https://example.org")
+    @Link(name = "Confluence", type = "mylink", url = "https://confluence.disney.com/pages/viewpage.action?pageId=309822521")
     @TmsLink("https://hpalm.com")
     @Severity(SeverityLevel.MINOR)
     @Test

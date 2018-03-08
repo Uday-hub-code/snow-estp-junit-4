@@ -47,10 +47,10 @@ public class AlertsTableListLabelsTest extends AbstractVacationPlannerRewardsUiT
     @Issue("PPE-10717")
     @Owner("Jose")
     @Feature("Snow")
-    @Tag("SNOW")
     @DisplayName("Access to the application")
+    @Tag("SNOW")
     @Tag("UI")
-    @Link(name = "allure", type = "mylink", url = "https://example.org")
+    @Link(name = "Confluence", type = "mylink", url = "https://confluence.disney.com/pages/viewpage.action?pageId=309822521")
     @TmsLink("https://hpalm.com")
     @Severity(SeverityLevel.TRIVIAL)
     @Test

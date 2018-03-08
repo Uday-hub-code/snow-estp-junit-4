@@ -11,14 +11,11 @@
 		"useListener": true
 	},
 	"drivers": {
-		"PHANTOMJS": 
+		"CHROME": 
 		{
 			"arguments": 
 			[
-				"--ignore-ssl-errors=yes",
-				"--load-images=yes",
-				"--web-security=false",
-				"--webdriver-loglevel=NONE"
+				"--headless"
 			],
 
 			"capabilities": 

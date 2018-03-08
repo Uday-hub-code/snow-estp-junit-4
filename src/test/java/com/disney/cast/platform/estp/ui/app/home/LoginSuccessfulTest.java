@@ -41,10 +41,10 @@ public class LoginSuccessfulTest extends AbstractVacationPlannerRewardsUiTest {
     @Issue("PPE-10717")
     @Owner("Jose")
     @Feature("Login")
-    @Tag("API")
     @DisplayName("Access to the application")
+    @Tag("API")
     @Tag("UI")
-    @Link(name = "allure", type = "mylink", url = "https://example.org")
+    @Link(name = "Confluence", type = "mylink", url = "https://confluence.disney.com/pages/viewpage.action?pageId=309822521")
     @TmsLink("https://hpalm.com")
     @Severity(SeverityLevel.BLOCKER)
     @Test

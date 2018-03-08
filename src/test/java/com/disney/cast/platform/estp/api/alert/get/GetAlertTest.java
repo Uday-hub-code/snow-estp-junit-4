@@ -80,7 +80,7 @@ public class GetAlertTest extends AbstractVacationPlannerRewardsApiTest {
     @DisplayName("Alert SUCCESS")
     @Tag("API")
     @Tag("GET")
-    @Link(name = "allure", type = "mylink", url = "https://example.org")
+    @Link(name = "Confluence", type = "mylink", url = "https://confluence.disney.com/pages/viewpage.action?pageId=309822521")
     @TmsLink("https://hpalm.com")
     @Severity(SeverityLevel.CRITICAL)
     @Test
