@@ -1,4 +1,4 @@
-package com.disney.cast.platform.estp.ui.suites.visual;
+package com.disney.cast.platform.estp.ui.visual;
 
 import static com.disney.cast.platform.vacationplanner.test.ui.UiAuthLevel.SNOWADMIN;
 import static org.junit.Assert.assertTrue;
