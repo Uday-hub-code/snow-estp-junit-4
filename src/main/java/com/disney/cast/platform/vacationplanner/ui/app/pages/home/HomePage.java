@@ -11,14 +11,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import com.disney.automation.webframework.visual.Ocular;
+import com.disney.automation.webframework.visual.comparator.OcularResult;
+import com.disney.automation.webframework.visual.snapshot.Snap;
 import com.disney.cast.platform.vacationplanner.ui.app.pages.AbstractVacationPlannerPageObject;
 import com.disney.cast.platform.vacationplanner.ui.app.pages.components.AlertMessageComponent;
 import com.disney.cast.platform.vacationplanner.ui.app.pages.components.EntitlementCard;
 import com.disney.cast.platform.vacationplanner.ui.app.pages.components.PerformanceHorizontalChart;
 import com.disney.cast.platform.vacationplanner.ui.app.pages.performance.PerformanceSummaryPage;
-import com.testautomationguru.ocular.Ocular;
-import com.testautomationguru.ocular.comparator.OcularResult;
-import com.testautomationguru.ocular.snapshot.Snap;
 
 /**
  * VACATIUON PLNNER HOME PAGE

@@ -9,11 +9,11 @@ import java.nio.file.Paths;
 import org.junit.Test;
 
 import com.disney.automation.webframework.config.User;
+import com.disney.automation.webframework.visual.Ocular;
+import com.disney.automation.webframework.visual.comparator.OcularResult;
 import com.disney.cast.platform.common.ui.pages.ApplicationsLoginPage;
 import com.disney.cast.platform.vacationplanner.test.ui.AbstractVacationPlannerRewardsUiTest;
 import com.disney.cast.platform.vacationplanner.ui.app.pages.home.HomePage;
-import com.testautomationguru.ocular.Ocular;
-import com.testautomationguru.ocular.comparator.OcularResult;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
